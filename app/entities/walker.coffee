@@ -2,16 +2,16 @@
 BaseEntity = require 'entities/base'
 Sprites = require 'sprites'
 
-class Ghost extends BaseEntity
+class LifeWalker extends BaseEntity
   defaults:
     speed: 8
     jump: 15
 
   initialize: ->
-    (new Sprites).create('ghost')
+    (new Sprites).create('walker')
     console.log 'so far so good'
     model = this
-    entity = Crafty.e( "2D, Canvas, SpriteAnimation, ghost, Twoway, Keyboard, Gravity")
+    entity = Crafty.e( "2D, Canvas, SpriteAnimation, walker, Twoway, Keyboard, Gravity")
     entity
       .attr
         x: Crafty.viewport.width / 2 - entity.w / 2
@@ -29,4 +29,4 @@ class Ghost extends BaseEntity
     model.set
       entity: entity
 
-module.exports = Ghost
+module.exports = LifeWalker

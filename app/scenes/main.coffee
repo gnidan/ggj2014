@@ -1,7 +1,9 @@
 Ghost = require 'entities/ghost'
+LifeWalker = require 'entities/walker'
+
 Crafty.scene 'main', ->
   Crafty.box2D.init(0, 10, 32, true)
-  g = new Ghost
+  w = new LifeWalker
  
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr

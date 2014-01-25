@@ -1,9 +1,6 @@
 BaseEntity = require 'entities/base'
-Sprites = require 'sprites'
 require 'scenes/main'
 
-sprites = new Sprites
-sprites.create()
 
 class Game
   start: ->
