@@ -8,7 +8,7 @@ class Ghost extends BaseEntity
   initialize: ->
     console.log 'so far so good'
     model = this
-    entity = Crafty.e( "2D, Canvas, SpriteAnimation, ghost, Multiway, Keyboard")
+    entity = Crafty.e( "2D, Canvas, SpriteAnimation, ghost, Multiway, Keyboard, Gravity")
     entity
       .attr
         x: Crafty.viewport.width / 2 - entity.w / 2
@@ -21,6 +21,9 @@ class Ghost extends BaseEntity
         RIGHT_ARROW: 0
       .animate("walking", -1)
       .setName('Ghost')
+      .gravityConst(2)
+      .gravity("tile15")
+	  
 
     entity.origin(entity.w / 2, entity.h / 2)
 
