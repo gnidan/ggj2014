@@ -32,7 +32,6 @@
         });
         tNum++;
       }
-      debugger
       Crafty.sprite(tWidth, tHeight, tsImage, sMap);
       return null;
     },
