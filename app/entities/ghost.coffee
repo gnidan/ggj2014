@@ -1,5 +1,5 @@
 #It grabs the base entity file and assigns it to the variable base entity
-BaseEntity = require 'entities/base' 
+BaseEntity = require 'entities/base'
 
 class Ghost extends BaseEntity
   initialize: ->
