@@ -8,7 +8,10 @@ sprites.create()
 class Game
   start: ->
     Crafty.init(800, 600)
+    Crafty.canvas.init()
     Crafty.background('green')
+
+    Crafty.scene('main')
 
 
 class Ghost extends BaseEntity
@@ -35,5 +38,4 @@ $(document).ready ->
   g = new Game
   g.start()
 
-  Crafty.scene('main')
 

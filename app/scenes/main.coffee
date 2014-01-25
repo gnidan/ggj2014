@@ -1,5 +1,5 @@
 Crafty.scene 'main', ->
-  Crafty.box2D.init(0, 10, 10, true)
+  Crafty.box2D.init(0, 10, 32, true)
   
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
