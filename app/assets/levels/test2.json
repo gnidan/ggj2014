@@ -1,0 +1,39 @@
+{ "height":7,
+ "layers":[
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 0, 1, 3, 0, 0, 0, 4, 5, 6, 0, 0, 0, 1, 2, 3, 10, 11, 12, 1, 2, 3],
+         "height":7,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":9,
+         "x":0,
+         "y":0
+        }],
+ "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
+ "tileheight":110,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "image":"..\/images\/tiles\/life.png",
+         "imageheight":455,
+         "imagewidth":340,
+         "margin":0,
+         "name":"life",
+         "properties":
+            {
+
+            },
+         "spacing":5,
+         "tileheight":110,
+         "tilewidth":110
+        }],
+ "tilewidth":110,
+ "version":1,
+ "width":9
+}
