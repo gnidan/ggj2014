@@ -3,11 +3,24 @@
   "version": "0.0.1",
   "main": "public/app.js",
   "dependencies": {
-    "crafty": "~0.6.1"
+    "crafty": "~0.6.1",
+    "backbone": "~1.1.0",
+    "jquery": "~2.0.2",
+    "underscore": "~1.5.2"
   },
   "overrides": {
     "crafty": {
       "main": "dist/crafty.js"
+    },
+    "underscore": {
+      "main": "underscore.js"
+    },
+    "backbone": {
+      "dependencies": {
+        "underscore": "*",
+        "jquery": "*"
+      },
+      "main": "backbone.js"
     }
   }
 }
