@@ -1,32 +1,11 @@
 #It grabs the base entity file and assigns it to the variable base entity
-BaseEntity = require 'entities/base'
-Sprites = require 'sprites'
+PlayerEntity = require 'entities/player_entity'
 
-class Ghost extends BaseEntity
+class Ghost extends PlayerEntity
   defaults:
-    speed: 8
-    jump: 15
-
-  initialize: ->
-    (new Sprites).create('ghost')
-    console.log 'so far so good'
-    model = this
-    entity = Crafty.e( "2D, Canvas, SpriteAnimation, ghost, Twoway, Keyboard, Gravity")
-    entity
-      .attr
-        x: Crafty.viewport.width / 2 - entity.w / 2
-        y: 0
-        z: 300
-      .reel("walking", 500, 0, 0, 4)
-      .twoway(model.get('speed'), model.get('jump'))
-      .animate("walking", -1)
-      .setName('Ghost')
-      .gravityConst(1)
-      .gravity("tile15")
-
-    entity.origin(entity.w / 2, entity.h / 2)
-
-    model.set
-      entity: entity
+    speed: 5
+    jump: 10
+    comp: 'ghost'
+    name: 'Ghost'
 
 module.exports = Ghost
