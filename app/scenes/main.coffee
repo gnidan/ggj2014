@@ -1,6 +1,8 @@
+Ghost = require 'entities/ghost'
 Crafty.scene 'main', ->
   Crafty.box2D.init(0, 10, 32, true)
-  
+  g = new Ghost
+ 
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
       isFloor: true
