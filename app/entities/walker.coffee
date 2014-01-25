@@ -17,12 +17,22 @@ class LifeWalker extends BaseEntity
         x: Crafty.viewport.width / 2 - entity.w / 2
         y: 0
         z: 300
-      .reel("walking", 500, 0, 0, 4)
+      .reel("walking", 100, 0, 0, 4)
       .twoway(model.get('speed'), model.get('jump'))
-      .animate("walking", -1)
       .setName('Ghost')
       .gravityConst(1)
       .gravity("tile15")
+      .bind 'NewDirection', (dir) ->
+        if dir.x == 0 and dir.y == 0
+          this.pauseAnimation()
+        else if dir.x > 0
+          this.unflip()
+          this.animate('walking', -1)
+        else if dir.x < 0
+          this.flip('X')
+          this.animate('walking', -1)
+
+
 
     entity.origin(entity.w / 2, entity.h / 2)
 
