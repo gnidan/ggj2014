@@ -27,17 +27,11 @@ Crafty.scene 'main', ->
         .setMapDataSource(level)
         .createWorld (tileMap) ->
           for layer in ['Life', 'Ghost', 'Robot']
-            for e in tileMap.getEntitiesInLayer("#{layer}Foreground")
-              e.addComponent('MapTile')
-              e.addComponent("#{layer}ForegroundTile")
-
-          for e in tileMap.getEntitiesInLayer('GhostForeground')
-            e.visible = false
-
-          setTimeout((->
-            for e in tileMap.getEntitiesInLayer('GhostForeground')
-              e.visible = true
-          ), 5000)
+            entitiesInLayer = tileMap.getEntitiesInLayer("#{layer}Foreground")
+            if entitiesInLayer?
+              for e in entitiesInLayer
+                e.addComponent('MapTile')
+                e.addComponent("#{layer}ForegroundTile")
 
 
 #  
