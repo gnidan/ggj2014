@@ -3,7 +3,7 @@ LifeWalker = require 'entities/walker'
 
 Crafty.scene 'main', ->
   Crafty.box2D.init(0, 10, 32, true)
-  w = new Ghost
+  w = new LifeWalker
  
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
@@ -15,4 +15,4 @@ Crafty.scene 'main', ->
               [Crafty.viewport.width, Crafty.viewport.height]]
 
   map = Crafty.e("TiledLevel")
-  map.tiledLevel("/levels/test.json", "Canvas")
+  map.tiledLevel("/levels/testn.json", "Canvas")

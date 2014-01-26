@@ -23,7 +23,7 @@ class PlayerEntity extends BaseEntity
       .twoway(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(1)
-      .gravity("tile15")
+      .gravity("MapTile")
       .bind 'NewDirection', (dir) ->
         if dir.x == 0 and dir.y == 0
           this.pauseAnimation()
