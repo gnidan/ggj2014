@@ -15,5 +15,33 @@ Crafty.scene 'main', ->
       shape: [[0, Crafty.viewport.height],
               [Crafty.viewport.width, Crafty.viewport.height]]
 
-  map = Crafty.e("TiledLevel")
-  map.tiledLevel("/levels/level.json", "Canvas")
+  levelURL = '/levels/level.json'
+  $.ajax
+    type: 'GET'
+    url: levelURL
+    dataType: 'json'
+    data: {}
+    async: false
+    success: (level) ->
+      Crafty.e('2D, Canvas, TiledMapBuilder')
+        .setMapDataSource(level)
+        .createWorld (tileMap) ->
+          for layer in ['Life', 'Ghost', 'Robot']
+            for e in tileMap.getEntitiesInLayer("#{layer}Foreground")
+              e.addComponent('MapTile')
+              e.addComponent("#{layer}ForegroundTile")
+
+          for e in tileMap.getEntitiesInLayer('GhostForeground')
+            e.visible = false
+
+          setTimeout((->
+            for e in tileMap.getEntitiesInLayer('GhostForeground')
+              e.visible = true
+          ), 5000)
+
+
+#  
+#  TiledMapBuilder.createWorld (map) ->
+#    console.log 'yo'
+
+

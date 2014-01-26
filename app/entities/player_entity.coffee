@@ -23,8 +23,9 @@ class PlayerEntity extends BaseEntity
       .twoway(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(1)
-      .gravity("MapTile")
+      .gravity("LifeForegroundTile")
       .bind 'NewDirection', (dir) ->
+        console.log('new direction')
         if dir.x == 0 and dir.y == 0
           this.pauseAnimation()
         else if dir.x > 0
@@ -33,11 +34,11 @@ class PlayerEntity extends BaseEntity
         else if dir.x < 0
           this.flip('X')
           this.animate('walking', -1)
-      .onHit 'MapTile', ->
-        if this._movement
-          this.x -= this._movement.x
-          this.y -= this._movement.y
-          this._up = false
+      .onHit 'MapTile', (comps) ->
+        console.log 'hit maptile'
+        this.x -= this._movement.x
+        this.y -= this._movement.y
+        this._up = false
 
     entity.origin(entity.w / 2, entity.h / 2)
     Crafty.viewport.follow(entity, 0, 0)

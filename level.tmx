@@ -3,9 +3,27 @@
  <tileset firstgid="1" name="life" tilewidth="110" tileheight="110">
   <image source="app/assets/images/tiles/life.png" trans="ffffff" width="330" height="440"/>
  </tileset>
- <layer name="Tile Layer 1" width="20" height="50">
+ <tileset firstgid="13" name="ghost" tilewidth="110" tileheight="110">
+  <image source="app/assets/images/tiles/ghost.png" trans="ffffff" width="330" height="440"/>
+ </tileset>
+ <layer name="LifeForeground" width="20" height="50">
   <data encoding="base64" compression="zlib">
    eJztzksKACAIAFH74v1PnIuCkCBoU8E8mJWIigAAAAAAfhas2EuXf9l58ddsFase7vl0ajUf+XsNP4AAfg==
+  </data>
+ </layer>
+ <layer name="Positions" width="20" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAACAtwEPoAAB
+  </data>
+ </layer>
+ <layer name="GhostForeground" width="20" height="50" opacity="0.61">
+  <data encoding="base64" compression="zlib">
+   eJztzzEKwCAQRUGPEMX7n1ULhS0MksoIM/Cqbf6mBAAAwM2eXh6Vw1t2/rh1bvq6J/4Sq6HV/e3/BiL/AeY=
+  </data>
+ </layer>
+ <layer name="RobotForeground" width="20" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAACAtwEPoAAB
   </data>
  </layer>
 </map>
