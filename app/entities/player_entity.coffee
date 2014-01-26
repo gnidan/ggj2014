@@ -12,12 +12,12 @@ class PlayerEntity extends BaseEntity
   initialize: ->
     (new Sprites).create()
     model = this
-    comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Twoway, Keyboard, Gravity"
+    comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Twoway, Keyboard, Gravity, Collision"
     entity = Crafty.e(comps)
     entity
       .attr
         x: Crafty.viewport.width / 2 - entity.w / 2
-        y: 0
+        y: Crafty.viewport.height
         z: 300
       .reel("walking", 100, 0, 0, 4)
       .twoway(model.get('speed'), model.get('jump'))
@@ -33,6 +33,10 @@ class PlayerEntity extends BaseEntity
         else if dir.x < 0
           this.flip('X')
           this.animate('walking', -1)
+      .onHit 'MapTile', ->
+        if this._movement
+          this.x -= this._movement.x
+          this._up = false
 
     entity.origin(entity.w / 2, entity.h / 2)
     Crafty.viewport.follow(entity, 0, 0)
