@@ -4,7 +4,7 @@ require 'scenes/main'
 
 class Game
   start: ->
-    Crafty.init(600, 600)
+    Crafty.init(null, 500)
     Crafty.canvas.init()
     Crafty.background('#94cbf2')
 
