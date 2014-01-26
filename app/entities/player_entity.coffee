@@ -23,9 +23,8 @@ class PlayerEntity extends BaseEntity
       .twoway(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(1)
-      .gravity("LifeForegroundTile")
+      .gravity("MapTile")
       .bind 'NewDirection', (dir) ->
-        console.log('new direction')
         if dir.x == 0 and dir.y == 0
           this.pauseAnimation()
         else if dir.x > 0
@@ -35,7 +34,6 @@ class PlayerEntity extends BaseEntity
           this.flip('X')
           this.animate('walking', -1)
       .onHit 'MapTile', (comps) ->
-        console.log 'hit maptile'
         this.x -= this._movement.x
         this.y -= this._movement.y
         this._up = false
