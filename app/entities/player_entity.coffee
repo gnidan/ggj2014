@@ -34,9 +34,8 @@ class PlayerEntity extends BaseEntity
           this.flip('X')
           this.animate('walking', -1)
 
-
-
     entity.origin(entity.w / 2, entity.h / 2)
+    Crafty.viewport.follow(entity, 0, 0)
 
     model.set
       entity: entity
