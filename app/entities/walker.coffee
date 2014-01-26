@@ -24,7 +24,9 @@ class LifeWalker extends PlayerEntity
     else
       x = @get('entity').attr('x') + 40
 
+    _this = this
     @get('entity').bind 'KeyDown', (e) ->
+      return unless _this.active
       if e.key == Crafty.keys.SPACE
         new Vine(x, @_y)
 
