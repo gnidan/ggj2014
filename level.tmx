@@ -1,29 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="20" height="50" tilewidth="110" tileheight="110">
- <tileset firstgid="1" name="life" tilewidth="110" tileheight="110">
-  <image source="app/assets/images/tiles/life.png" trans="ffffff" width="330" height="440"/>
+<map version="1.0" orientation="orthogonal" width="20" height="15" tilewidth="110" tileheight="55">
+ <tileset firstgid="1" name="life" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/life.png" trans="ffffff" width="440" height="550"/>
  </tileset>
- <tileset firstgid="13" name="ghost" tilewidth="110" tileheight="110">
-  <image source="app/assets/images/tiles/ghost.png" trans="ffffff" width="330" height="440"/>
+ <tileset firstgid="41" name="placement-sprites" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/placement-sprites.png" trans="ffffff" width="330" height="55"/>
  </tileset>
- <layer name="Positions" width="20" height="50">
+ <tileset firstgid="44" name="mech" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/mech.png" trans="ffffff" width="440" height="550"/>
+ </tileset>
+ <tileset firstgid="84" name="ghost" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/ghost.png" trans="ffffff" width="440" height="550"/>
+ </tileset>
+ <tileset firstgid="124" name="vines_grow" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/vines_grow.png" trans="ffffff" width="1100" height="110"/>
+ </tileset>
+ <tileset firstgid="144" name="ghost_door" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/ghost_door.png" trans="ffffff" width="220" height="110"/>
+ </tileset>
+ <tileset firstgid="148" name="mech_door" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/mech_door.png" trans="ffffff" width="220" height="110"/>
+ </tileset>
+ <tileset firstgid="152" name="walker_door" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/walker_door.png" trans="ffffff" width="220" height="110"/>
+ </tileset>
+ <layer name="Foreground" width="20" height="15">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20MH6AAAACAtwEPoAAB
+   eJxjYBgFo2Bkghoqm9dGZfMGu/sGAgAAfp4CBQ==
   </data>
  </layer>
- <layer name="LifeForeground" width="20" height="50">
+ <layer name="LifeForeground" width="20" height="15">
   <data encoding="base64" compression="zlib">
-   eJztzksKACAIAFH74v1PnIuCkCBoU8E8mJWIigAAAAAAfhas2EuXf9l58ddsFase7vl0ajUf+XsNP4AAfg==
+   eJzjZWBg4KUyphYYNQ8TKAKxEhQrU8E8UsBQMU+JCAwLO0U8aoaKf6ltHheVMLXLFRAGALhrBtk=
   </data>
  </layer>
- <layer name="GhostForeground" width="20" height="50">
+ <layer name="Positions" width="20" height="15">
   <data encoding="base64" compression="zlib">
-   eJztzzEKwCAQRUGPEMX7n1ULhS0MksoIM/Cqbf6mBAAAwM2eXh6Vw1t2/rh1bvq6J/4Sq6HV/e3/BiL/AeY=
+   eJxjYBgF2MAMKps3i8rmjRSgOdAOoAGYQgUzJiCxpxGhXgtKa+OQn0SZc+gGAOKCA/0=
   </data>
  </layer>
- <layer name="RobotForeground" width="20" height="50">
+ <layer name="GhostForeground" width="20" height="15">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20MH6AAAACAtwEPoAAB
+   eJxLYGBgSKAyphYYNQ8TlABxKRSXUcE8UsBQMa+UCAwLuxI8amjlvsFuXiyVcAINMAA4iCjk
+  </data>
+ </layer>
+ <layer name="RobotForeground" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJyzZWBgsKUyphYYNQ8T+ACxLxT7UcE8UsBQMc8XD4aFHyzsfPCoHSr+pbZ5plTA5kjmWVIJ2wExACd9GYA=
   </data>
  </layer>
 </map>

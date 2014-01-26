@@ -3,6 +3,7 @@ PlayerEntity = require 'entities/player_entity'
 
 class Ghost extends PlayerEntity
   defaults:
+    exit: 'Door.Ghost'
     speed: 5
     jump: 10
     comp: 'ghost'

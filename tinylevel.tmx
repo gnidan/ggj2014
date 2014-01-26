@@ -15,6 +15,9 @@
  <tileset firstgid="124" name="vines_grow" tilewidth="110" tileheight="55">
   <image source="app/assets/images/sprites/vines_grow.png" trans="ffffff" width="1100" height="110"/>
  </tileset>
+ <tileset firstgid="144" name="ghost_door" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/ghost_door.png" trans="ffffff" width="220" height="110"/>
+ </tileset>
  <layer name="Foreground" width="5" height="10">
   <data encoding="base64" compression="zlib">
    eJxjYKAdqMEi1kaBOnwAAJ04AgU=

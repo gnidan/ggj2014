@@ -25,6 +25,24 @@ class Sprites extends Backbone.Model
         tileh: 110
         elements:
           vine: [0, 0]
+      mech_door:
+        file: 'images/sprites/mech_door.png'
+        tile: 110
+        tileh: 110
+        elements:
+          mech_door: [0, 0]
+      ghost_door:
+        file: 'images/sprites/ghost_door.png'
+        tile: 110
+        tileh: 110
+        elements:
+          ghost_door: [0, 0]
+      walker_door:
+        file: 'images/sprites/walker_door.png'
+        tile: 110
+        tileh: 110
+        elements:
+          walker_door: [0, 0]
 
   create: (key) ->
     if key?

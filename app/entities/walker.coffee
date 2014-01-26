@@ -6,6 +6,7 @@ TOP_BLOCK = 'tile124'
 
 class LifeWalker extends PlayerEntity
   defaults:
+    exit: 'Door.Walker'
     comp: 'walker'
     name: 'Walker'
     speed: 8

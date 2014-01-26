@@ -3,6 +3,7 @@ PlayerEntity = require 'entities/player_entity'
 
 class Robot extends PlayerEntity
   defaults:
+    exit: 'Door.Robot'
     speed: 2
     jump: 0
     comp: 'robot'

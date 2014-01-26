@@ -5,6 +5,7 @@ require 'components/movement'
 
 class PlayerEntity extends BaseEntity
   defaults:
+    doorActivated: false
     facing: 'right'
     speed: 8
     jump: 15
@@ -56,6 +57,11 @@ class PlayerEntity extends BaseEntity
         this.x -= this._movement.x
         this.y -= -this._jumpSpeed if this._up
         this._up = false
+      .onHit model.get('exit'), (comps) ->
+        unless model.get('doorActivated')
+          console.log 'got home'
+          model.set('doorActivated', true)
+          comps[0].obj.animate('activate')
       .onHit 'Foreground', (comps) ->
         unless model.active
           this._falling = false
@@ -87,7 +93,6 @@ class PlayerEntity extends BaseEntity
       
     boundingEntity = Crafty.e('2D, Canvas, Collision, DebugRectangle')
       .debugStroke('green')
-    boundingEntity.debugRectangle(boundingEntity)
     updateBoundingEntityPos()
 
     entity.bind 'Move', ->

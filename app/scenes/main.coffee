@@ -17,7 +17,7 @@ Crafty.scene 'main', ->
       shape: [[0, Crafty.viewport.height],
               [Crafty.viewport.width, Crafty.viewport.height]]
 
-  levelURL = 'levels/tinylevel.json'
+  levelURL = 'levels/level.json'
   $.ajax
     type: 'GET'
     url: levelURL
