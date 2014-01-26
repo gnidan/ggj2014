@@ -3,10 +3,10 @@ Robot = require 'entities/robot'
 LifeWalker = require 'entities/walker'
 
 Switcher = require 'switcher'
+EntityPlacer = require 'entity_placer'
 
 Crafty.scene 'main', ->
   Crafty.box2D.init(0, 10, 32, true)
-  w = new LifeWalker
  
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
@@ -17,20 +17,22 @@ Crafty.scene 'main', ->
       shape: [[0, Crafty.viewport.height],
               [Crafty.viewport.width, Crafty.viewport.height]]
 
-  levelURL = '/levels/halfheight2.json'
+  levelURL = 'levels/halfheight2.json'
   $.ajax
     type: 'GET'
     url: levelURL
     dataType: 'json'
     data: {}
     async: false
-    success: (level) ->
-      s = new Switcher
+    success: (levelData) ->
+      level = null
+
       Crafty.e('2D, Canvas, TiledMapBuilder')
-        .setMapDataSource(level)
+        .setMapDataSource(levelData)
         .createWorld (tileMap) ->
+          level = tileMap
+
           for layer in ['Life', 'Ghost', 'Robot']
-            
             entitiesInLayer = tileMap.getEntitiesInLayer("#{layer}Foreground")
             if entitiesInLayer?
               for e in entitiesInLayer
@@ -46,6 +48,10 @@ Crafty.scene 'main', ->
           if positionEntities?
             for e in positionEntities
               console.log e
+              e.visible = false
+
+      ep = new EntityPlacer(level)
+      s = new Switcher(ep.models)
 
 
 #  

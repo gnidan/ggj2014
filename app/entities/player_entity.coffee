@@ -11,25 +11,27 @@ class PlayerEntity extends BaseEntity
     name: 'player_entity'
     gravityConst: 1
 
-  initialize: ->
+  active: true
+
+  initialize: (x, y, opts...) ->
     (new Sprites).create()
     model = this
     comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Movement, Keyboard, Gravity, Collision"
     entity = Crafty.e(comps)
     entity
       .attr
-        x: Crafty.viewport.width / 2 - entity.w / 2
-        y: Crafty.viewport.height
+        x: x
+        y: y
         z: 300
-      .reel("walking", 100, 0, 0, 4)
-      .reel("jumping", 100, [[0, 0], [4, 0]])
-      .reel("stand", 100, [[5, 0]])
+      .reel("walking", 300, 0, 0, 4)
+      .reel("jumping", 300, [[0, 0], [3, 0]])
+      .reel("stand", 300, [[3, 0]])
       .movement(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(@get('gravityConst'))
       .gravity("MapTile")
       .bind 'NewDirection', (dir) ->
-        console.log dir
+        return unless model.active
         if dir.x == 0 and not this._up
           this.pauseAnimation()
           this.animate('stand')
@@ -47,9 +49,17 @@ class PlayerEntity extends BaseEntity
         this._up = false
 
     entity.origin(entity.w / 2, entity.h / 2)
-    Crafty.viewport.follow(entity, 0, 0)
 
     model.set
       entity: entity
+
+  deactivate: ->
+    @get('entity').disableControl()
+    @active = false
+
+  activate: ->
+    @get('entity').enableControl()
+    Crafty.viewport.follow(@get('entity'), 0, 0)
+    @active = true
 
 module.exports = PlayerEntity

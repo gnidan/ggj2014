@@ -3,9 +3,17 @@
  <tileset firstgid="1" name="life" tilewidth="110" tileheight="55">
   <image source="app/assets/images/tiles/life.png" trans="ffffff" width="440" height="550"/>
  </tileset>
+ <tileset firstgid="41" name="placement-sprites" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/placement-sprites.png" trans="ffffff" width="330" height="55"/>
+ </tileset>
  <layer name="LifeForeground" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYCAOKAKxEhpWJlLvSAYqA+2AYQBGw5B0AMuvQymPcgIxFxBzU8k8XiRMyE5iMLJ52OS50dSMBAwAwJ8FnQ==
+  </data>
+ </layer>
+ <layer name="Positions" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALygDad7dOkollaVDRrpAIA0XgAfw==
   </data>
  </layer>
 </map>

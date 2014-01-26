@@ -2,19 +2,19 @@ class Sprites extends Backbone.Model
   defaults:
     images:
       ghost:
-        file: '/images/sprites/ghost.png'
+        file: 'images/sprites/ghost.png'
         tile: 50
         tileh: 110
         elements:
           ghost: [0, 0]
       walker:
-        file: '/images/sprites/walker.png'
+        file: 'images/sprites/walker.png'
         tile: 50
         tileh: 110
         elements:
           walker: [0, 0]
       robot:
-        file: '/images/sprites/mech.png'
+        file: 'images/sprites/mech.png'
         tile: 50
         tileh: 110
         elements:
