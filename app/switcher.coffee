@@ -20,6 +20,9 @@ class Switcher
   constructor: (@characters=[], @entitiesByLayer) ->
     @bindTabKey()
 
+    @enableLayer @characters[@activeIndex].layer
+
+
   activateNext: ->
     cur = @activeIndex
     next = (@activeIndex + 1) % @characters.length
