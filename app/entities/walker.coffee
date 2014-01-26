@@ -10,7 +10,7 @@ class LifeWalker extends PlayerEntity
     comp: 'walker'
     name: 'Walker'
     speed: 8
-    jump: 20
+    jump: 23
     gravityConst: 1
     frames:
       walking: [[0, 0], [1, 0], [2, 0]]
