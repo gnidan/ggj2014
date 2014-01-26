@@ -2,6 +2,8 @@
 PlayerEntity = require 'entities/player_entity'
 Vine = require 'entities/vine'
 
+TOP_BLOCK = 'tile124'
+
 class LifeWalker extends PlayerEntity
   defaults:
     comp: 'walker'
@@ -28,6 +30,18 @@ class LifeWalker extends PlayerEntity
     @get('entity').bind 'KeyDown', (e) ->
       return unless _this.active
       if e.key == Crafty.keys.SPACE
-        new Vine(x, @_y)
+        comps = _this.get('boundingEntity').hit('Foreground')
+        if comps
+          coords = []
+
+          for e in comps
+            e = e.obj
+            if e.attr('tile') == TOP_BLOCK
+              coords.push
+                x: e._x
+                y: e._y
+            e.destroy()
+
+            new Vine(x, y) for {x, y} in coords
 
 module.exports = LifeWalker

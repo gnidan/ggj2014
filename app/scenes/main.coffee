@@ -41,10 +41,11 @@ Crafty.scene 'main', ->
                 e.addComponent('MapTile')
                 e.addComponent("#{layer}ForegroundTile")
 
-          ghostLayerEntities = tileMap.getEntitiesInLayer('GhostForeground')
-          if ghostLayerEntities?
-            for e in ghostLayerEntities
-              e.visible = false
+          otherForeground = tileMap.getEntitiesInLayer('Foreground')
+          if otherForeground?
+            for e in otherForeground
+              e.addComponent('Foreground')
+              e.addComponent("ForegroundTile")
 
           positionEntities = tileMap.getEntitiesInLayer('Positions')
           if positionEntities?

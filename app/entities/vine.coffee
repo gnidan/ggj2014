@@ -11,12 +11,9 @@ class Vine extends BaseEntity
       .attr
         x: x
         y: y
-        z: 299
+        z: 200
       .reel('growth', 1000, 0, 0, 10)
-      .bind 'AnimationEnd', ->
-        @addComponent 'MapTile'
       .animate('growth')
-
 
     @set 'entity', entity
 

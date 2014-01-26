@@ -24,6 +24,7 @@ class PlayerEntity extends BaseEntity
     model = this
     comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Movement, Keyboard, Gravity, Collision"
     entity = Crafty.e(comps)
+
     entity
       .attr
         x: x
@@ -55,14 +56,42 @@ class PlayerEntity extends BaseEntity
         this.x -= this._movement.x
         this.y -= -this._jumpSpeed if this._up
         this._up = false
+      .onHit 'Foreground', (comps) ->
+        if this._falling and
+            not this._up and
+            this._movement.x == 0 and
+            this._movement.y == 0
+          this._falling = false
+        else
+          this.x -= this._movement.x
+          this.y -= -this._jumpSpeed if this._up
+          this._up = false
+          this._falling = false
       .bind 'hit', -> # collision with ground (Gravity)
         this.pauseAnimation()
         this.animate('stand')
 
-    entity.origin(entity.w / 2, entity.h / 2)
+    updateBoundingEntityPos = ->
+      padding = 20
+      paddingTop = 75
+      boundingEntity.attr
+        x: entity._x - padding
+        w: entity._w + 2 * padding
+        y: entity._y - paddingTop
+        h: entity._h + (padding + paddingTop)
+        z: 100
+      
+    boundingEntity = Crafty.e('2D, Canvas, Collision, DebugRectangle')
+      .debugStroke('green')
+    boundingEntity.debugRectangle(boundingEntity)
+    updateBoundingEntityPos()
+
+    entity.bind 'Move', ->
+      updateBoundingEntityPos()
 
     model.set
       entity: entity
+      boundingEntity: boundingEntity
 
   deactivate: ->
     @get('entity').attr('z', 299)

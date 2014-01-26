@@ -12,24 +12,32 @@
  <tileset firstgid="84" name="ghost" tilewidth="110" tileheight="55">
   <image source="app/assets/images/tiles/ghost.png" trans="ffffff" width="440" height="550"/>
  </tileset>
+ <tileset firstgid="124" name="vines_grow" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/sprites/vines_grow.png" trans="ffffff" width="1100" height="110"/>
+ </tileset>
+ <layer name="Foreground" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAdqMEi1kaBOnwAAJ04AgU=
+  </data>
+ </layer>
  <layer name="LifeForeground" width="5" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcgBOIuZAwNxDzYsEACgQAdA==
+   eJxTZGBgUIJiZQbKgSKaWSoUmscJxFxImBuIebFgAK3YAYY=
   </data>
  </layer>
  <layer name="Positions" width="5" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBg8QBNKa0FpbRL0AgAaUAB/
+   eJxjYCAfaFKgFx/QgtLaJOgBACcgAH8=
   </data>
  </layer>
  <layer name="GhostForeground" width="5" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcIASIQ5FwGBBHYMEASngDYg==
+   eJwrYWBgKIXiMgbKQQmaWeUUmhcCxKFIOAyII7BgAHyOBww=
   </data>
  </layer>
  <layer name="RobotForeground" width="5" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcQAeIdZGwHhAbYMEAKBgB0g==
+   eJzzYWBg8IViPwbKgQ+aWf4UmqcDxLpIWA+IDbBgAJo/BDw=
   </data>
  </layer>
 </map>
