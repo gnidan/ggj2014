@@ -1,8 +1,11 @@
+Sprites = require 'sprites'
+
 class BaseEntity extends Backbone.Model
   defaults:
     entity: null
 
   initialize: ->
+    (new Sprites).create()
 
   getEntity: ->
     this.get('entity')
