@@ -7,5 +7,6 @@ class Robot extends PlayerEntity
     jump: 0
     comp: 'robot'
     name: 'Robot'
+    gravityConst: 1.5
 
 module.exports = Robot
