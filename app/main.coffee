@@ -4,13 +4,11 @@ require 'scenes/main'
 
 class Game
   start: ->
-    Crafty.init(null, 500)
+    Crafty.init(null, 700)
     Crafty.canvas.init()
     Crafty.background('#94cbf2')
 
     Crafty.scene('main')
-
-
 
 
 $(document).ready ->
