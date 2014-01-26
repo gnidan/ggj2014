@@ -13,6 +13,12 @@ class Sprites extends Backbone.Model
         tileh: 110
         elements:
           walker: [0, 0]
+      robot:
+        file: '/images/sprites/mech.png'
+        tile: 50
+        tileh: 110
+        elements:
+          robot: [0, 0]
 
   create: (key) ->
     if key?
