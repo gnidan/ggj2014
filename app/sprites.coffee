@@ -25,7 +25,6 @@ class Sprites extends Backbone.Model
         tileh: 110
         elements:
           vine: [0, 0]
-<<<<<<< Updated upstream
       mech_door:
         file: 'images/sprites/mech_door.png'
         tile: 110
@@ -44,14 +43,12 @@ class Sprites extends Backbone.Model
         tileh: 110
         elements:
           walker_door: [0, 0]
-=======
       minions:
         file: 'images/sprites/minion.png'
         tile: 102
         tileh: 84
         elements:
           minion: [0,0]
->>>>>>> Stashed changes
 
   create: (key) ->
     if key?
