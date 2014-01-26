@@ -6,6 +6,6 @@ class LifeWalker extends PlayerEntity
     comp: 'walker'
     name: 'Walker'
     speed: 8
-    jump: 20
+    jump: 15
 
 module.exports = LifeWalker

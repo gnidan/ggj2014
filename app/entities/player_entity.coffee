@@ -36,6 +36,7 @@ class PlayerEntity extends BaseEntity
       .onHit 'MapTile', ->
         if this._movement
           this.x -= this._movement.x
+          this.y -= this._movement.y
           this._up = false
 
     entity.origin(entity.w / 2, entity.h / 2)
