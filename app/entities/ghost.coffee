@@ -19,5 +19,8 @@ class Ghost extends PlayerEntity
     super
     this.get("entity")
       .bind "KeyUp", (e) ->
+        if e.key == Crafty.keys.SPACE
+          console.log "SSSPAAAAAAAAAAAAAAAAAAAAAAAACE!!!"
+          #new Ghost_Minion.origin(@.x,@.y)
 
 module.exports = Ghost
