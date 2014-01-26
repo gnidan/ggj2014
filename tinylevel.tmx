@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="5" height="10" tilewidth="110" tileheight="55">
+ <tileset firstgid="1" name="life" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/life.png" trans="ffffff" width="440" height="550"/>
+ </tileset>
+ <tileset firstgid="41" name="placement-sprites" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/placement-sprites.png" trans="ffffff" width="330" height="55"/>
+ </tileset>
+ <layer name="LifeForeground" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcgBOIuZAwNxDzYsEACgQAdA==
+  </data>
+ </layer>
+ <layer name="Positions" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg8QBNKa0FpbRL0AgAaUAB/
+  </data>
+ </layer>
+</map>
