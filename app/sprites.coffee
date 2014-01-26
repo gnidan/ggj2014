@@ -49,6 +49,12 @@ class Sprites extends Backbone.Model
         tileh: 84
         elements:
           minion: [0,0]
+      complete:
+        file: 'images/sprites/complete.png'
+        tile: 317
+        tileh: 46
+        elements:
+          complete: [0,0]
 
   create: (key) ->
     if key?

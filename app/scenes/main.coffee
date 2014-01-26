@@ -3,11 +3,14 @@ Robot = require 'entities/robot'
 LifeWalker = require 'entities/walker'
 Switcher = require 'switcher'
 EntityPlacer = require 'entity_placer'
+Complete = require 'entities/complete'
 
 Crafty.scene 'main', ->
   Crafty.audio.add("backgroundMusic", "sounds/song1.mp3")
   Crafty.audio.play("backgroundMusic", -1, 0.5)
   Crafty.box2D.init(0, 10, 32, true)
+  
+  
  
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
@@ -35,6 +38,8 @@ Crafty.scene 'main', ->
           level = tileMap
           selector = _.bind(tileMap.getEntitiesInLayer, tileMap)
 
+          
+          
           for layer in ['Life', 'Ghost', 'Robot']
             entitiesInLayer = tileMap.getEntitiesInLayer("#{layer}Foreground")
             if entitiesInLayer?

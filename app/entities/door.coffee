@@ -1,4 +1,5 @@
 BaseEntity = require 'entities/base'
+Complete = require 'entities/complete'
 
 class Door extends BaseEntity
   sprite: 'mech_door'
@@ -15,9 +16,15 @@ class Door extends BaseEntity
         z: 200
       .reel('activate', 100, 0, 0, 2)
       .reel('deactivate', 100, [[0, 0]])
+    .bind 'AnimationEnd', ->
+      Door.activatedSoFar += 1
+      if Door.activatedSoFar == 3
+        new Complete(x, y)
 
     @set 'entity', entity
 
+  @activatedSoFar = 0
+  
   activate: ->
     @get('entity').animate('activate')
 
