@@ -12,7 +12,7 @@ class PlayerEntity extends BaseEntity
     gravityConst: 1
     frames:
       walking: [[0, 0], [1, 0], [2, 0]]
-      jumping: [[0, 0], [4, 0]]
+      jumping: [[4, 0]]
       stand: [[0, 0]]
 
   active: true
@@ -66,6 +66,7 @@ class PlayerEntity extends BaseEntity
   activate: ->
     @get('entity').attr('z', 300)
     @get('entity').alpha = 1
+    @get('entity')._up = false
     @get('entity').enableControl()
     Crafty.viewport.follow(@get('entity'), 0, 0)
     @active = true
