@@ -5,7 +5,7 @@ class Vine extends BaseEntity
     super
 
     model = this
-    comps = "2D, Canvas, SpriteAnimation, vine, Keyboard, Gravity, Collision"
+    comps = "2D, Canvas, SpriteAnimation, vine, Gravity, Collision"
     entity = Crafty.e(comps)
     entity
       .attr

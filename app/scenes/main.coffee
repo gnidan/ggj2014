@@ -1,11 +1,12 @@
 Ghost = require 'entities/ghost'
 Robot = require 'entities/robot'
 LifeWalker = require 'entities/walker'
-
 Switcher = require 'switcher'
 EntityPlacer = require 'entity_placer'
 
 Crafty.scene 'main', ->
+  Crafty.audio.add("backgroundMusic", "sounds/song1.mp3")
+  Crafty.audio.play("backgroundMusic", -1, 0.5);
   Crafty.box2D.init(0, 10, 32, true)
  
   floor = Crafty.e('2D, Canvas, Box2D')

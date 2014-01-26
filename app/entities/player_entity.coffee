@@ -45,11 +45,11 @@ class PlayerEntity extends BaseEntity
           this.animate('stand')
         else if dir.x > 0
           this.unflip()
-          this.facing = 'right'
+          model.set('facing', 'right')
           this.animate('walking', -1)
         else if dir.x < 0
           this.flip('X')
-          this.facing = 'left'
+          model.set('facing', 'left')
           this.animate('walking', -1)
         if this._up
           this.animate('jumping', 0)

@@ -3,7 +3,7 @@ BaseEntity = require 'entities/base'
 Sprites = require 'sprites'
 require 'components/movement'
 
-class PlayerEntity extends BaseEntity
+class NPE extends BaseEntity
   defaults:
     speed: 8
     #jump: 15
@@ -16,14 +16,14 @@ class PlayerEntity extends BaseEntity
   initialize: (x, y, opts...) ->
     (new Sprites).create()
     model = this
-    comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Movement, Gravity, Collision"
+    comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Gravity, Collision"
     entity = Crafty.e(comps)
     entity
       .attr
         x: x
         y: y
         z: 300
-      .movement(model.get('speed'), model.get('jump'))
+      #.movement(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(@get('gravityConst'))
       .gravity("MapTile")
@@ -64,4 +64,4 @@ class PlayerEntity extends BaseEntity
     Crafty.viewport.follow(@get('entity'), 0, 0)
     @active = true
 
-module.exports = PlayerEntity
+module.exports = NPE

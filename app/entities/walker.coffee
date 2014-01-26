@@ -21,7 +21,6 @@ class LifeWalker extends PlayerEntity
 
   initialize: ->
     super
-
     if @get('facing') is 'left'
       x = @get('entity').attr('x') - 40
     else

@@ -33,4 +33,5 @@ class Robot extends PlayerEntity
             #gate = collision[0]
             #gate.animate
             #gate.open()
+            
 module.exports = Robot
