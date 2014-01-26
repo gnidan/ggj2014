@@ -5,15 +5,10 @@ Minion = require 'entities/minion'
 class Ghost extends PlayerEntity
   defaults:
     exit: 'Door.Ghost'
-<<<<<<< Updated upstream
-=======
     speed: 5
     jump: 13
->>>>>>> Stashed changes
     comp: 'ghost'
     name: 'Ghost'
-    speed: 5
-    jump: 10
 
     gravityConst: 0.3
     frames:
