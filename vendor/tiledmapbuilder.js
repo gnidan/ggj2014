@@ -298,6 +298,7 @@ Crafty.c("TiledMapBuilder", {
 	 *  
 	 * @param {Object} mockEntities, keys are layerName, contains MockObject or 0	
 	 * @return {Object} entities, {layer1Name:entities, layer2Name: entities, ...}
+   * @edited g. nicholas d'andrea
 	 */
     createEntitiesFromMock:function( mockEntities ){ //TODO - refactor method
     	var layers = {};
@@ -311,7 +312,14 @@ Crafty.c("TiledMapBuilder", {
     			 if( mockEntity == 0 ){
     				 layers[layer].push(0);
 				}else{    					    				
-					var entity = Crafty.e( mockEntity.head ).attr({ x:mockEntity.x, y:mockEntity.y });
+					var entity = Crafty.e( mockEntity.head )
+            .attr({
+              x: mockEntity.x,
+              y: mockEntity.y,
+              layer: mockEntity.layer,
+              tile: mockEntity.tile
+            });
+
 	    			if( isIsometric ){
 	    				isometric.place( entity.x, entity.y, 0, entity);	
 	    			}    			     			

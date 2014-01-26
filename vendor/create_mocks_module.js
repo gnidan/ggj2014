@@ -104,11 +104,16 @@ MockModule = {
 	 * @param {Object} layer
 	 * @param {Integer} dataIndex	
 	 * @return {Object} mock, {head:String, x:number, y:number} 
+   * @edited g. nicholas d'andrea
 	 */
 	createMockEntity:function( layer, dataIndex){			
 		var column = dataIndex % layer.width;
 		var row = Math.floor((dataIndex / layer.width));								
-		var mock = {head:"2D," + this._renderMethod + ",Tile" + layer.data[dataIndex] + "," + layer.name};	
+		var mock = {
+      head:"2D," + this._renderMethod + ",Tile" + layer.data[dataIndex] + "," + layer.name,
+      layer: layer.name,
+      tile: "tile" + layer.data[dataIndex]
+    };
 		this.setPosition( column, row, mock );				
 		return mock;
 	},
