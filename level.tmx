@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="50" tilewidth="110" tileheight="110">
+ <tileset firstgid="1" name="life" tilewidth="110" tileheight="110">
+  <image source="app/assets/images/tiles/life.png" trans="ffffff" width="330" height="440"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztzksKACAIAFH74v1PnIuCkCBoU8E8mJWIigAAAAAAfhas2EuXf9l58ddsFase7vl0ajUf+XsNP4AAfg==
+  </data>
+ </layer>
+</map>

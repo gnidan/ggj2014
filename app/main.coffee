@@ -6,7 +6,7 @@ class Game
   start: ->
     Crafty.init(600, 600)
     Crafty.canvas.init()
-    Crafty.background('green')
+    Crafty.background('#94cbf2')
 
     Crafty.scene('main')
 

@@ -16,4 +16,4 @@ Crafty.scene 'main', ->
               [Crafty.viewport.width, Crafty.viewport.height]]
 
   map = Crafty.e("TiledLevel")
-  map.tiledLevel("/levels/testn.json", "Canvas")
+  map.tiledLevel("/levels/level.json", "Canvas")
