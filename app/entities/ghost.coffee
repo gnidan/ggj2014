@@ -8,6 +8,10 @@ class Ghost extends PlayerEntity
     comp: 'ghost'
     name: 'Ghost'
     gravityConst: 0.3
+    frames:
+      walking: [[0, 0], [1, 0], [2, 0]]
+      jumping: [[0, 0], [4, 0]]
+      stand: [[0, 0]]
 
   layer: 'Ghost'
 

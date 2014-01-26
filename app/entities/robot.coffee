@@ -8,6 +8,10 @@ class Robot extends PlayerEntity
     comp: 'robot'
     name: 'Robot'
     gravityConst: 1.5
+    frames:
+      walking: [[0, 0], [1, 0], [2, 0]]
+      jumping: [[0, 0]]
+      stand: [[0, 0]]
 
   layer: 'Robot'
 

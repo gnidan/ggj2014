@@ -10,6 +10,10 @@ class PlayerEntity extends BaseEntity
     comp: 'player'
     name: 'player_entity'
     gravityConst: 1
+    frames:
+      walking: [[0, 0], [1, 0], [2, 0]]
+      jumping: [[0, 0], [4, 0]]
+      stand: [[0, 0]]
 
   active: true
 
@@ -23,9 +27,9 @@ class PlayerEntity extends BaseEntity
         x: x
         y: y
         z: 300
-      .reel("walking", 300, 0, 0, 4)
-      .reel("jumping", 300, [[0, 0], [3, 0]])
-      .reel("stand", 300, [[3, 0]])
+      .reel("walking", 300, @get('frames').walking)
+      .reel("jumping", 300, @get('frames').jumping)
+      .reel("stand", 300, @get('frames').stand)
       .movement(model.get('speed'), model.get('jump'))
       .setName(model.get('name'))
       .gravityConst(@get('gravityConst'))
