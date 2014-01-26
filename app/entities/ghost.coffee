@@ -7,5 +7,10 @@ class Ghost extends PlayerEntity
     jump: 10
     comp: 'ghost'
     name: 'Ghost'
-
+  initialize: -> 
+    super
+    this.get("entity")
+      .bind "KeyUp", (e) -> 
+        if e.key == Crafty.keys["SPACE"]
+          #new Minion(this.x, this.y)
 module.exports = Ghost

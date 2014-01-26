@@ -4,7 +4,7 @@ LifeWalker = require 'entities/walker'
 
 Crafty.scene 'main', ->
   Crafty.box2D.init(0, 10, 32, true)
-  w = new LifeWalker
+  w = new Ghost
  
   floor = Crafty.e('2D, Canvas, Box2D')
     .attr
@@ -15,7 +15,7 @@ Crafty.scene 'main', ->
       shape: [[0, Crafty.viewport.height],
               [Crafty.viewport.width, Crafty.viewport.height]]
 
-  levelURL = '/levels/level.json'
+  levelURL = '/levels/halfHeight.json'
   $.ajax
     type: 'GET'
     url: levelURL
@@ -27,6 +27,7 @@ Crafty.scene 'main', ->
         .setMapDataSource(level)
         .createWorld (tileMap) ->
           for layer in ['Life', 'Ghost', 'Robot']
+            
             entitiesInLayer = tileMap.getEntitiesInLayer("#{layer}Foreground")
             if entitiesInLayer?
               for e in entitiesInLayer
