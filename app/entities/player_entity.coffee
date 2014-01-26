@@ -51,6 +51,9 @@ class PlayerEntity extends BaseEntity
         this.x -= this._movement.x
         this.y -= -this._jumpSpeed if this._up
         this._up = false
+      .bind 'hit', -> # collision with ground (Gravity)
+        this.pauseAnimation()
+        this.animate('stand')
 
     entity.origin(entity.w / 2, entity.h / 2)
 
