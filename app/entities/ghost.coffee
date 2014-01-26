@@ -9,6 +9,8 @@ class Ghost extends PlayerEntity
     name: 'Ghost'
     gravityConst: 0.3
 
+  layer: 'Ghost'
+
   initialize: ->
     super
     this.get("entity")

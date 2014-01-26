@@ -17,7 +17,7 @@ Crafty.scene 'main', ->
       shape: [[0, Crafty.viewport.height],
               [Crafty.viewport.width, Crafty.viewport.height]]
 
-  levelURL = 'levels/halfheight2.json'
+  levelURL = 'levels/tinylevel.json'
   $.ajax
     type: 'GET'
     url: levelURL
@@ -26,11 +26,13 @@ Crafty.scene 'main', ->
     async: false
     success: (levelData) ->
       level = null
+      selector = null
 
       Crafty.e('2D, Canvas, TiledMapBuilder')
         .setMapDataSource(levelData)
         .createWorld (tileMap) ->
           level = tileMap
+          selector = _.bind(tileMap.getEntitiesInLayer, tileMap)
 
           for layer in ['Life', 'Ghost', 'Robot']
             entitiesInLayer = tileMap.getEntitiesInLayer("#{layer}Foreground")
@@ -51,7 +53,7 @@ Crafty.scene 'main', ->
               e.visible = false
 
       ep = new EntityPlacer(level)
-      s = new Switcher(ep.models)
+      s = new Switcher(ep.models, selector)
 
 
 #  

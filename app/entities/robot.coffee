@@ -9,4 +9,6 @@ class Robot extends PlayerEntity
     name: 'Robot'
     gravityConst: 1.5
 
+  layer: 'Robot'
+
 module.exports = Robot

@@ -21,6 +21,28 @@
          "width":5,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 84, 85, 85, 85, 86, 88, 88, 88, 88, 88],
+         "height":10,
+         "name":"GhostForeground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":5,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 45, 45, 45, 46, 48, 48, 48, 48, 48],
+         "height":10,
+         "name":"RobotForeground",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":5,
+         "x":0,
+         "y":0
         }],
  "orientation":"orthogonal",
  "properties":
@@ -52,6 +74,38 @@
          "imagewidth":330,
          "margin":0,
          "name":"placement-sprites",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":55,
+         "tilewidth":110,
+         "transparentcolor":"#ffffff"
+        }, 
+        {
+         "firstgid":44,
+         "image":"..\/images\/tiles\/mech.png",
+         "imageheight":550,
+         "imagewidth":440,
+         "margin":0,
+         "name":"mech",
+         "properties":
+            {
+
+            },
+         "spacing":0,
+         "tileheight":55,
+         "tilewidth":110,
+         "transparentcolor":"#ffffff"
+        }, 
+        {
+         "firstgid":84,
+         "image":"..\/images\/tiles\/ghost.png",
+         "imageheight":550,
+         "imagewidth":440,
+         "margin":0,
+         "name":"ghost",
          "properties":
             {
 

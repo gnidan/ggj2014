@@ -9,4 +9,6 @@ class LifeWalker extends PlayerEntity
     jump: 20
     gravityConst: 1
 
+  layer: 'Life'
+
 module.exports = LifeWalker

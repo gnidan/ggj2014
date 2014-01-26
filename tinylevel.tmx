@@ -6,6 +6,12 @@
  <tileset firstgid="41" name="placement-sprites" tilewidth="110" tileheight="55">
   <image source="app/assets/images/tiles/placement-sprites.png" trans="ffffff" width="330" height="55"/>
  </tileset>
+ <tileset firstgid="44" name="mech" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/mech.png" trans="ffffff" width="440" height="550"/>
+ </tileset>
+ <tileset firstgid="84" name="ghost" tilewidth="110" tileheight="55">
+  <image source="app/assets/images/tiles/ghost.png" trans="ffffff" width="440" height="550"/>
+ </tileset>
  <layer name="LifeForeground" width="5" height="10">
   <data encoding="base64" compression="zlib">
    eJxjYBjcgBOIuZAwNxDzYsEACgQAdA==
@@ -14,6 +20,16 @@
  <layer name="Positions" width="5" height="10">
   <data encoding="base64" compression="zlib">
    eJxjYBg8QBNKa0FpbRL0AgAaUAB/
+  </data>
+ </layer>
+ <layer name="GhostForeground" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcIASIQ5FwGBBHYMEASngDYg==
+  </data>
+ </layer>
+ <layer name="RobotForeground" width="5" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjcQAeIdZGwHhAbYMEAKBgB0g==
   </data>
  </layer>
 </map>
