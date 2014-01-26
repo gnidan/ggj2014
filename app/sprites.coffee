@@ -19,6 +19,12 @@ class Sprites extends Backbone.Model
         tileh: 110
         elements:
           robot: [0, 0]
+      vine:
+        file: 'images/sprites/vines_grow.png'
+        tile: 110
+        tileh: 110
+        elements:
+          vine: [0, 0]
 
   create: (key) ->
     if key?

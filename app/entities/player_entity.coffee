@@ -5,6 +5,7 @@ require 'components/movement'
 
 class PlayerEntity extends BaseEntity
   defaults:
+    facing: 'right'
     speed: 8
     jump: 15
     comp: 'player'
@@ -18,7 +19,8 @@ class PlayerEntity extends BaseEntity
   active: true
 
   initialize: (x, y, opts...) ->
-    (new Sprites).create()
+    super(opts...)
+
     model = this
     comps = "2D, Canvas, SpriteAnimation, #{model.get('comp')}, Movement, Keyboard, Gravity, Collision"
     entity = Crafty.e(comps)
@@ -41,9 +43,11 @@ class PlayerEntity extends BaseEntity
           this.animate('stand')
         else if dir.x > 0
           this.unflip()
+          this.facing = 'right'
           this.animate('walking', -1)
         else if dir.x < 0
           this.flip('X')
+          this.facing = 'left'
           this.animate('walking', -1)
         if this._up
           this.animate('jumping', 0)
@@ -51,6 +55,9 @@ class PlayerEntity extends BaseEntity
         this.x -= this._movement.x
         this.y -= -this._jumpSpeed if this._up
         this._up = false
+      .bind 'hit', -> # collision with ground (Gravity)
+        this.pauseAnimation()
+        this.animate('stand')
 
     entity.origin(entity.w / 2, entity.h / 2)
 

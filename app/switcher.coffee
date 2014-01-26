@@ -4,9 +4,9 @@ class Switcher
   layers: ['Ghost', 'Life', 'Robot']
 
   backgrounds:
-    'Ghost': '#21325b'
+    'Ghost': '#150c33'
     'Life': '#94cbf2'
-    'Robot': '#cccccc'
+    'Robot': '#81737f'
 
   bindTabKey: ->
     activateNext = _.bind(@activateNext, this)
