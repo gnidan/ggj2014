@@ -58,10 +58,14 @@ class PlayerEntity extends BaseEntity
       entity: entity
 
   deactivate: ->
+    @get('entity').attr('z', 299)
+    @get('entity').alpha = 0.5
     @get('entity').disableControl()
     @active = false
 
   activate: ->
+    @get('entity').attr('z', 300)
+    @get('entity').alpha = 1
     @get('entity').enableControl()
     Crafty.viewport.follow(@get('entity'), 0, 0)
     @active = true
