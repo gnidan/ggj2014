@@ -57,6 +57,10 @@ class PlayerEntity extends BaseEntity
         this.y -= -this._jumpSpeed if this._up
         this._up = false
       .onHit 'Foreground', (comps) ->
+        unless model.active
+          this._falling = false
+          return
+
         if this._falling and
             not this._up and
             this._movement.x == 0 and
